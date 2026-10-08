@@ -14,18 +14,10 @@ import {
 } from "lucide-react";
 
 const WHATSAPP_NUMBER = "5493415857565";
-const EMAIL_ADDRESS = "alaejosteam@gmail.com";
-const CV_URL = "/cv-entrenador.pdf";
+const EMAIL_ADDRESS = "alaejosbrian@gmail.com";
+const CV_URL = "/CV Brian Joel Alaejos.pdf";
 
 const MODALIDADES = [
-  {
-    id: "boxeo-funcional",
-    name: "BOXEO & ACONDICIONAMIENTO",
-    subtitle: "Técnica, pegada y resistencia cardiovascular",
-    desc: "Aprende los fundamentos del boxeo de pie, trabajo al saco, manoplas y acondicionamiento cardiovascular de alta exigencia.",
-    badge: "Destacado",
-    msg: "¡Hola Brian! Me interesa recibir info sobre los entrenamientos de Boxeo y Preparación Física.",
-  },
   {
     id: "personalizado",
     name: "ENTRENAMIENTO 1 A 1",
@@ -37,8 +29,8 @@ const MODALIDADES = [
   {
     id: "grupal",
     name: "TEAM TRAINING (GRUPOS)",
-    subtitle: "Motivación y constancia colectiva",
-    desc: "Entrenamientos en parejas o grupos pequeños. Alta intensidad, corrección continua y espíritu de equipo.",
+    subtitle: "Máximo 4 personas por grupo",
+    desc: "Entrenamientos dinámicos en grupos reducidos (máximo 4 personas por grupo). Alta intensidad, corrección técnica continua y motivación colectiva.",
     msg: "¡Hola Brian! Quiero consultar los horarios y tarifas de los entrenamientos en grupo.",
   },
   {
@@ -119,8 +111,8 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-dvh w-full flex justify-center bg-black text-stone-100 font-sans antialiased">
-      {/* Video de Fondo con iluminación limpia */}
+    <div className="relative min-h-dvh w-full flex justify-center bg-black text-stone-100 font-sans antialiased selection:bg-white selection:text-black">
+      {/* Video de Fondo */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <video
           autoPlay
@@ -132,14 +124,13 @@ export default function App() {
         >
           <source src="/video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/85" />
       </div>
 
       {/* Contenedor Mobile Principal */}
       <main className="relative z-10 w-full max-w-105 min-h-dvh flex flex-col justify-between px-5 py-10 sm:py-12">
-        {/* Cabecera / Identidad */}
+        {/* Cabecera */}
         <header className="flex flex-col items-center text-center">
-          {/* Logo en círculo blanco para destacar el isotipo */}
           <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-white/20 backdrop-blur-md shadow-2xl mb-3 transition-transform hover:scale-105 duration-300">
             <div className="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center shadow-inner">
               {!logoError ? (
@@ -176,7 +167,7 @@ export default function App() {
           </div>
         </header>
 
-        {/* 3 Botones Principales */}
+        {/* Botones Principales */}
         <section className="w-full flex flex-col gap-3.5 my-8">
           {/* Botón 1: Trayectoria */}
           <button
@@ -220,7 +211,7 @@ export default function App() {
                   </span>
                 </div>
                 <p className="text-xs text-stone-300">
-                  Boxeo, 1 a 1, grupos reducidos y online
+                  1 a 1, Team Training (máx 4) y Asesoría
                 </p>
               </div>
             </div>
@@ -258,14 +249,14 @@ export default function App() {
         </footer>
       </main>
 
-      {/* Modales */}
+      {/* Modales Responsive */}
       {activeModal && (
         <div
           className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
           onClick={closeModal}
         >
           <div
-            className="bg-[#121212] border border-white/20 w-full max-w-sm sm:max-w-110 rounded-3xl p-5 sm:p-6 relative shadow-2xl max-h-[85dvh] flex flex-col"
+            className="bg-[#121212] border border-white/20 w-full max-w-sm sm:max-w-110 rounded-3xl p-5 sm:p-6 relative shadow-2xl max-h-[88dvh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="w-10 h-1 bg-white/30 rounded-full mx-auto mb-3 shrink-0" />
@@ -290,7 +281,7 @@ export default function App() {
                   </h3>
                 </div>
 
-                <div className="flex-1 overflow-y-auto min-h-0 pr-1 space-y-3.5 text-xs sm:text-sm text-stone-300 leading-relaxed font-light">
+                <div className="flex-1 overflow-y-auto min-h-0 pr-1 space-y-3.5 text-xs sm:text-sm text-stone-300 leading-relaxed font-light [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                   <p>
                     ¡Hola! Soy{" "}
                     <strong className="text-white font-semibold">
@@ -314,19 +305,22 @@ export default function App() {
                       <Award className="w-4 h-4 text-white" />
                       Especialidades & Experiencia
                     </h4>
-                    <ul className="space-y-1.5 text-stone-300 text-xs">
+                    <ul className="space-y-2 text-stone-300 text-xs">
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0" />
                         <span>Entrenador de Boxeo & Deportes de Contacto</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0" />
-                        <span>Preparación Física, Potencia y Movilidad</span>
+                        <span>
+                          Preparación física, entrenamiento funcional y
+                          entrenamiento integral
+                        </span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0" />
-                        <span>
-                          Acondicionamiento Cardiovascular y Pérdida de Grasa
+                        <span className="font-semibold text-white">
+                          Alto nivel de BOXEO
                         </span>
                       </li>
                     </ul>
@@ -377,7 +371,7 @@ export default function App() {
                   </p>
                 </div>
 
-                <div className="flex-1 overflow-y-auto min-h-0 pr-1 space-y-2.5 my-2">
+                <div className="flex-1 overflow-y-auto min-h-0 pr-1 space-y-2.5 my-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                   {MODALIDADES.map((m) => (
                     <div
                       key={m.id}
@@ -434,7 +428,7 @@ export default function App() {
                   </h3>
                 </div>
 
-                <div className="flex-1 overflow-y-auto min-h-0 pr-1 space-y-3.5 my-1 text-xs sm:text-sm">
+                <div className="flex-1 overflow-y-auto min-h-0 pr-1 space-y-3.5 my-1 text-xs sm:text-sm [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                   <div className="space-y-2">
                     <a
                       href={createWhatsAppLink(
@@ -479,10 +473,9 @@ export default function App() {
                       Zonas de Entrenamiento Presencial
                     </h4>
                     <p className="text-stone-300 text-xs leading-relaxed font-light">
-                      • <strong>Rosario:</strong> Centro, Pichincha, Costanera y
-                      parques coordinados.
-                      <br />• <strong>Funes:</strong> Domicilios particulares y
-                      barrios cerrados.
+                      • <strong>Rosario & Funes:</strong> Sesiones en gimnasio,
+                      entrenamientos al aire libre en puntos estratégicos y a
+                      domicilio.
                     </p>
                   </div>
 
